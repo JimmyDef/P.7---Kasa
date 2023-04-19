@@ -1,0 +1,42 @@
+header {
+    margin: 20px ; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        width: 150px;
+    }
+nav {
+    ul {
+        display: flex;
+       li {
+        margin-left:  10px ;
+       }
+    }
+    a {
+          
+       font-size: 13px;
+       
+    }
+}
+
+}
+@media screen and  (max-width: 650px) {
+    .uppercase { 
+   text-transform:  uppercase ;
+    } 
+}
+
+@media screen and  (min-width: 650px) {
+    header > nav > ul > li {
+    margin-left:  50px 
+    } 
+    .link-size {  
+    font-size: 24px;
+    }
+    
+    header img { 
+   width: 210px;
+    } 
+
+}
