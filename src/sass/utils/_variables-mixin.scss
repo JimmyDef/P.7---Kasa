@@ -1,0 +1,12 @@
+$color-primary: #ff6060;
+$color-bg: #f7f7f7;
+
+$desktop-min-width: 992px;
+$desktop-max-width: 1400px;
+
+@mixin display-flex($justify-C: center, $align-i: center, $flex-d) {
+  display: flex;
+  justify-content: $justify-C;
+  align-items: $align-i;
+  flex-direction: $flex-d;
+}

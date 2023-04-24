@@ -11,6 +11,7 @@
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  height: 100%;
 }
 
 /* Sections
@@ -21,7 +22,8 @@ html {
  */
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  // width: 1440px;
 }
 
 /**
@@ -174,7 +176,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -184,7 +187,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 

@@ -1,7 +1,5 @@
-// @import-normalize;
+@import "./utils/variables-mixin";
+// @import "./utils/mixin";
 
-@import "./utils/variables";
-@import "./utils/mixin";
-
-@import './base/base';
-@import './base/normalize';
+@import "./base/base";
+@import "./base/normalize";
