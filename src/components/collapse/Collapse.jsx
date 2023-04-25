@@ -15,7 +15,7 @@ function Collapse({ title, text, collapseState }) {
         <h2>{title}</h2>
         <img
           src={chevron}
-          alt="chevron"
+          alt="chevron up down"
           className={isOpen ? "rotate-chevron" : ""}
         />
       </div>

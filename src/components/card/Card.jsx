@@ -1,4 +1,6 @@
+import PropTypes from "prop-types";
 import "./card.scss";
+
 import { Link } from "react-router-dom";
 
 function card({ title, cover, id }) {
@@ -11,4 +13,11 @@ function card({ title, cover, id }) {
     </Link>
   );
 }
+
+card.propTypes = {
+  title: PropTypes.string,
+  cover: PropTypes.string,
+  id: PropTypes.string,
+};
+
 export default card;
