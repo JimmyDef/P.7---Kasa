@@ -1,34 +1,29 @@
+import {
+  Route,
+  createRoutesFromElements,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import NotFound from "./pages/404/NotFound";
+import Lodging from "./pages/lodging/Lodging";
+import About from "./pages/about/About";
+import Home from "./pages/home/Home";
+import RootLayout from "./layout/RootLayout";
 
-// import './../App.css';
-import { Route, Routes } from 'react-router-dom';
-import NotFound from './pages/404/NotFound';
-import Lodging from './pages/lodging/Lodging';
-import About from './pages/about/About';
-import Home from './pages/home/Home';
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="lodging/:id" element={<Lodging />} />
 
-import Header from './components/header/Header'
-import Footer from './components/footer/Footer'
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  )
+);
 
 function App() {
-  return (
-    
-<>
- <Header/>
-  <main>  
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/lodging/:id' element={<Lodging/>}/>
-      <Route path='/about' element={<About/>}/>
-      <Route path='*' element={<NotFound/>}/>
-    </Routes>
-   </main>
- 
- <Footer/>
-</>
-
-
-
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

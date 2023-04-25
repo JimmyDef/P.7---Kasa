@@ -1,0 +1,57 @@
+@import "./../../sass/utils/variables-mixin.scss";
+
+.collapse {
+  margin: 0 auto 20px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 15px;
+  background-color: $color-bg;
+  overflow: hidden;
+
+  &__title-box {
+    display: flex;
+    padding: 12px;
+    background-color: $color-primary;
+    border-radius: 15px;
+    justify-content: space-between;
+    color: white;
+    cursor: pointer;
+
+    img {
+      transition: all 250ms;
+      width: 20px;
+      &.rotate-chevron {
+        transform: rotate(180deg);
+      }
+    }
+    h2 {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  p {
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: $tablet-min-width) {
+  .collapse {
+    h2 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}
+@media screen and (min-width: $desktop-min-width) {
+  .collapse {
+    h2 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}

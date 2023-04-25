@@ -1,3 +1,5 @@
+@import "./../../sass/utils/variables-mixin";
+
 .not-found {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
   h1 {
     margin: 180px 0 10px;
     font-size: 96px;
-    font-weight: 700;
+    font-weight: 800;
   }
   p {
     text-align: center;
@@ -15,5 +17,21 @@
   }
   a {
     text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: $desktop-min-width) {
+  .not-found {
+    h1 {
+      font-size: 280px;
+      margin: 140px 0 10px;
+    }
+    p {
+      font-size: 34px;
+    }
+    a {
+      margin-bottom: 80px;
+      font-size: 18px;
+    }
   }
 }
