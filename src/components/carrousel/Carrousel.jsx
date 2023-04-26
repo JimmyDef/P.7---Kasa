@@ -64,13 +64,17 @@ function Carrousel({ pictures, title }) {
   );
 }
 
+// --------------------------
+// Prop-Types
+// --------------------------
+
 Carrousel.propTypes = {
   pictures: PropTypes.array,
   title: PropTypes.string,
 };
 Carrousel.defaultProps = {
   pictures: [defaultPicture],
-  title: "Lodging",
+  title: "Hébergement",
 };
 
 export default Carrousel;
