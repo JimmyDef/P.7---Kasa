@@ -1,9 +1,13 @@
 @import "./../../sass/utils/variables-mixin";
 
-.lodging-info {
+.accomodation-info-container {
+}
+
+.accomodation-info {
   h2 {
     margin-bottom: 6px;
     font-size: 18px;
+    font-weight: 500;
   }
   p {
     margin-bottom: 10px;
@@ -17,28 +21,31 @@
   }
 
   &__tag {
-    padding: 2px 5px 0;
+    padding: 4px 5px 0;
     height: 20px;
-    min-width: 100px;
+    min-width: 86px;
     text-align: center;
     background-color: $color-primary;
     color: white;
-    font-size: 12px;
+    font-size: 18px;
 
-    border-radius: 7px;
+    border-radius: 5px;
+    p {
+      font-size: 11px;
+      font-weight: 400;
+    }
   }
 }
 
-.lodging-profil {
+.accomodation-profil {
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
 
-  &__star {
-    font-size: 26px;
-    &.grey {
-      font-size: 26px;
-      color: grey;
+  &__stars {
+    img {
+      margin: 8px 5px 0 0;
+      width: 15px;
     }
   }
 
@@ -47,7 +54,7 @@
     align-items: center;
   }
   &__name {
-    margin-right: 11px;
+    margin: 2px 11px 0 0;
     p {
       font-size: 12px;
     }
@@ -65,6 +72,18 @@
   }
 }
 
-.lodging-collapse-container {
+.accomodation-collapse-container {
   margin-bottom: 150px;
+}
+
+@media screen and (min-width: $tablet-min-width) {
+  .accomodation-info-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .accomodation-profil {
+    // justify-content: space-around;
+    flex-direction: column-reverse;
+  }
 }

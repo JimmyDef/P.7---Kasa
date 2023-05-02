@@ -1,13 +1,12 @@
 @import "./../../sass/utils/variables-mixin";
 .card {
+  margin: auto;
   position: relative;
   overflow: hidden;
-  margin: auto;
   height: 255px;
   width: 100%;
   max-width: 500px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 10px rgb(71, 62, 61);
+  border-radius: 10px;
   transition: all 250ms;
   cursor: pointer;
 
@@ -18,8 +17,8 @@
   }
   h2 {
     z-index: 1;
-    position: absolute;
     padding: 20px;
+    position: absolute;
     height: 70px;
     bottom: 0;
     font-size: 18px;
@@ -40,7 +39,6 @@
     );
   }
   &:hover {
-    box-shadow: 5px 10px 10px $color-primary;
     transform: scale(1.03);
   }
 }

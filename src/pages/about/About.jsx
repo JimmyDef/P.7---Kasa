@@ -1,6 +1,6 @@
 import Banner from "./../../components/banner/Banner";
 import Collapse from "./../../components/collapse/Collapse";
-import { aboutUsData } from "./../../data/data.js";
+import aboutUsData from "./../../data/About-data.js";
 import "./about.scss";
 
 function About() {

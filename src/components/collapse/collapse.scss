@@ -3,30 +3,47 @@
 .collapse {
   margin: 0 auto 20px;
   width: 100%;
-  max-width: 900px;
-  border-radius: 15px;
-  background-color: $color-bg;
+  max-width: 1000px;
+  border-radius: 10px;
   overflow: hidden;
 
   &__title-box {
+    height: 30px;
     display: flex;
-    padding: 12px;
     background-color: $color-primary;
-    border-radius: 15px;
+    border-radius: 10px;
     justify-content: space-between;
     color: white;
     cursor: pointer;
 
     img {
+      margin: 0 12px;
       transition: all 250ms;
-      width: 20px;
+      width: 15px;
       &.rotate-chevron {
         transform: rotate(180deg);
       }
     }
     h2 {
-      font-size: 14px;
-      font-weight: 500;
+      margin: 8px 12px;
+      font-size: 13px;
+      font-weight: 400;
+    }
+  }
+
+  &__description {
+    position: relative;
+    padding: 20px 12px 5px;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: $color-bg;
+    transition: opacity 600ms;
+    transform: translateY(-15px);
+    &--hidden {
+      opacity: 0;
+      z-index: -1;
+      position: relative;
+      height: 0px;
     }
   }
   p {
@@ -37,17 +54,27 @@
 }
 @media screen and (min-width: $tablet-min-width) {
   .collapse {
-    h2 {
-      font-size: 18px;
-    }
-    p {
-      font-size: 16px;
+    &__title-box {
+      height: 47px;
+
+      h2 {
+        font-size: 18px;
+        margin-top: 15px;
+      }
+      img {
+        width: 20px;
+      }
+      p {
+        font-size: 16px;
+      }
     }
   }
 }
 @media screen and (min-width: $desktop-min-width) {
   .collapse {
     h2 {
+      margin-top: 10px;
+
       font-size: 24px;
     }
     p {

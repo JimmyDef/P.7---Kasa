@@ -1,22 +1,44 @@
 import { useParams } from "react-router-dom";
 import Collapse from "../../components/collapse/Collapse";
-import { data } from "./../../data/data.js";
+// import dataJSon from "./../../data/rentals.json";
 import NotFound from "../404/NotFound.jsx";
 import Carrousel from "../../components/carrousel/Carrousel";
 import "./lodging.scss";
+import redStar from "./../../assets/start-red.png";
+import greyStar from "./../../assets/star_grey.png";
+import { useState, useEffect } from "react";
 
 function Lodging() {
   const { id } = useParams();
 
-  const lodging = data.find((elt) => elt.id === id);
-  const rating = parseInt(lodging.rating);
-  const starsArray = [1, 2, 3, 4, 5];
+  const [dataLodging, setDataLodging] = useState([]);
 
-  if (!lodging) {
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await fetch(
+          "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json"
+        );
+        const data = await response.json();
+        setDataLodging(data);
+      } catch (err) {
+        console.log("error getData lodging");
+        return err;
+      }
+    };
+    getData();
+  }, []);
+
+  const lodging = dataLodging.find((elt) => elt.id === id);
+
+  if (!lodging && !dataLodging) {
     return <NotFound />;
   }
 
+  const rating = parseInt(lodging.rating);
+
   const [forename, name] = lodging.host.name.split(" ");
+
   return (
     <section>
       <Carrousel pictures={lodging.pictures} title={lodging.title} />
@@ -35,17 +57,15 @@ function Lodging() {
       </div>
       <div className="lodging-profil">
         <div className="lodging-profil__stars">
-          {starsArray.map((elt, idx) =>
-            elt <= rating ? (
-              <span key={"star" + idx} className="lodging-profil__star">
-                ★
-              </span>
+          {[...Array(5)].map((elt, idx) => {
+            const ratingArrayValue = idx + 1;
+
+            return ratingArrayValue <= rating ? (
+              <img src={redStar} key={"star" + idx} alt="étoile rouge" />
             ) : (
-              <span key={"star" + idx} className="lodging-profil__star grey">
-                ★
-              </span>
-            )
-          )}
+              <img src={greyStar} key={"star" + idx} alt="étoile grise" />
+            );
+          })}
         </div>
         <div className="lodging-profil__host">
           <div className="lodging-profil__name">

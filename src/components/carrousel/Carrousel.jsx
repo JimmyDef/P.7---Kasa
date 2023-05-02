@@ -15,7 +15,7 @@ function Carrousel({ pictures, title }) {
   // Fonction image précédente
   // --------------------------
 
-  const HandlePictureDown = () => {
+  const HandlePictureLeft = () => {
     if (index === 0) {
       return SetImgArrayNumber(pictures.length - 1);
     } else {
@@ -27,7 +27,7 @@ function Carrousel({ pictures, title }) {
   // Fonction image suivante
   // --------------------------
 
-  const HandlePictureUp = () => {
+  const HandlePictureRight = () => {
     if (index + 1 === pictures.length) {
       return SetImgArrayNumber(0);
     } else {
@@ -47,13 +47,13 @@ function Carrousel({ pictures, title }) {
             src={arrowLeft}
             alt="chevron gauche"
             className="carrousel__arrow carrousel__arrow--left"
-            onClick={HandlePictureDown}
+            onClick={HandlePictureLeft}
           />
           <img
             src={arrowRight}
             alt="chevron droit"
             className="carrousel__arrow carrousel__arrow--right"
-            onClick={HandlePictureUp}
+            onClick={HandlePictureRight}
           />
           <div className="carrousel__counteur-box">
             <p>{`${index + 1} / ${pictures.length} `}</p>
