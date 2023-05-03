@@ -3,7 +3,7 @@ import chevron from "./../../assets/chevron_down_svg.svg";
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-function Collapse({ title, text, collapseState }) {
+function Collapse({ title, text, collapseState, extraClass }) {
   const [isOpen, setIsOpen] = useState(collapseState);
 
   const description = () => {
@@ -22,7 +22,7 @@ function Collapse({ title, text, collapseState }) {
   };
 
   return (
-    <div className="collapse">
+    <div className={`collapse  ${extraClass}`}>
       <div className="collapse__title-box" onClick={handleToggle}>
         <h2>{title}</h2>
 

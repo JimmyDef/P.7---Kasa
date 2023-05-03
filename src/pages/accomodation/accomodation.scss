@@ -1,8 +1,5 @@
 @import "./../../sass/utils/variables-mixin";
 
-.accomodation-info-container {
-}
-
 .accomodation-info {
   h2 {
     margin-bottom: 6px;
@@ -72,18 +69,107 @@
   }
 }
 
-.accomodation-collapse-container {
+.accomodation-collapse-wrapper {
   margin-bottom: 150px;
 }
 
 @media screen and (min-width: $tablet-min-width) {
-  .accomodation-info-container {
+  .accomodation-detail-wrapper {
     display: flex;
     justify-content: space-between;
+    .accomodation-info {
+      h2 {
+        font-size: 24px;
+      }
+      p {
+        font-size: 16px;
+      }
+      &__tag {
+        padding: 2px 7px 0;
+        height: 22px;
+        min-width: 95px;
+        font-size: 16px;
+      }
+    }
+
+    .accomodation-profil {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+
+      margin-left: 60px;
+      &__stars {
+        img {
+          padding-bottom: 10px;
+
+          width: 18px;
+        }
+      }
+
+      &__name {
+        margin-top: 0;
+        p {
+          font-size: 18px;
+        }
+      }
+      &__picture {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+  .accomodation-collapse-wrapper {
+    display: flex;
+    gap: 5%;
+  }
+}
+@media screen and (min-width: $desktop-min-width) {
+  .accomodation-detail-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .accomodation-info {
+      h2 {
+        font-size: 34px;
+      }
+      p {
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+      &__tags-box {
+        margin-bottom: 25px;
+      }
+      &__tag {
+        padding: 3px 10px 0;
+        height: 25px;
+        min-width: 115px;
+        font-size: 18px;
+      }
+    }
+
+    .accomodation-profil {
+      align-items: flex-end;
+      &__stars {
+        img {
+          width: 20px;
+        }
+      }
+
+      &__host {
+        display: flex;
+        align-items: center;
+      }
+      &__name {
+        margin: 2px 11px 0 0;
+        p {
+          font-size: 18px;
+        }
+      }
+      &__picture {
+        width: 64px;
+        height: 64px;
+      }
+    }
   }
 
-  .accomodation-profil {
-    // justify-content: space-around;
-    flex-direction: column-reverse;
+  .accomodation-collapse-wrapper {
   }
 }

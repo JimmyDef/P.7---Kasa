@@ -8,7 +8,7 @@ import redStar from "./../../assets/start-red.png";
 import greyStar from "./../../assets/star_grey.png";
 
 import Loader from "../../components/loader/Loader";
-import useFetch from "./../../utils/useFetch";
+import { useFetch } from "./../../utils/useFetch";
 
 function Accomodation() {
   const { id } = useParams();
@@ -31,61 +31,66 @@ function Accomodation() {
     const [forename, name] = accomodation.host.name.split(" ");
 
     return (
-      <section>
+      <>
         <Carrousel
           pictures={accomodation.pictures}
           title={accomodation.title}
         />
-        <div className="accomodation-info">
-          <h2>{accomodation.title}</h2>
-          <p>{accomodation.location}</p>
+        <section className="accomodation-detail-wrapper">
+          <div className="accomodation-info">
+            <h2>{accomodation.title}</h2>
+            <p>{accomodation.location}</p>
 
-          <div className="accomodation-info__tags-box">
-            {accomodation.tags.map((tag, idx) => (
-              <div key={`${tag}-${idx}`} className="accomodation-info__tag">
-                <p>{tag}</p>
+            <div className="accomodation-info__tags-box">
+              {accomodation.tags.map((tag, idx) => (
+                <div key={`${tag}-${idx}`} className="accomodation-info__tag">
+                  <p>{tag}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="accomodation-profil">
+            <div className="accomodation-profil__stars">
+              {[...Array(5)].map((elt, idx) => {
+                const ratingArrayValue = idx + 1;
+
+                return ratingArrayValue <= rating ? (
+                  <img src={redStar} key={"star" + idx} alt="étoile rouge" />
+                ) : (
+                  <img src={greyStar} key={"star" + idx} alt="étoile grise" />
+                );
+              })}
+            </div>
+            <div className="accomodation-profil__host">
+              <div className="accomodation-profil__name">
+                <p>{forename}</p>
+                <p>{name}</p>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className="accomodation-profil">
-          <div className="accomodation-profil__stars">
-            {[...Array(5)].map((elt, idx) => {
-              const ratingArrayValue = idx + 1;
-
-              return ratingArrayValue <= rating ? (
-                <img src={redStar} key={"star" + idx} alt="étoile rouge" />
-              ) : (
-                <img src={greyStar} key={"star" + idx} alt="étoile grise" />
-              );
-            })}
-          </div>
-          <div className="accomodation-profil__host">
-            <div className="accomodation-profil__name">
-              <p>{forename}</p>
-              <p>{name}</p>
-            </div>
-            <div className="accomodation-profil__picture">
-              <img
-                src={accomodation.host.picture}
-                alt={accomodation.host.name}
-              />
+              <div className="accomodation-profil__picture">
+                <img
+                  src={accomodation.host.picture}
+                  alt={accomodation.host.name}
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="accomodation-collapse-container">
+        </section>
+        <div className="accomodation-collapse-wrapper">
           <Collapse
-            title={accomodation.title}
+            title="Description"
             text={accomodation.description}
             collapseState={false}
+            extraClass={"accomodation-collapse"}
           />
           <Collapse
-            title={accomodation.title}
+            title="Equipements"
             text={accomodation.equipments}
-            collapseState={true}
+            collapseState={false}
+            extraClass={"accomodation-collapse"}
           />
         </div>
-      </section>
+      </>
+      // </section>
     );
   }
 }
