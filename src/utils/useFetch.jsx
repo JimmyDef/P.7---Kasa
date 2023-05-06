@@ -1,11 +1,17 @@
 import { useState, useEffect } from "react";
+//--------------------------
+// Realisation du fetch  + gestion state pour le loader
+//--------------------------
 
-export function useFetch(url) {
+function useFetch(url) {
+  // State pour la récupération des données :
   const [fetchedData, setFetchedData] = useState([]);
+
+  // State pour la gestion du loader :
   const [isLoading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
 
   useEffect(() => {
+    if (!url) return;
     setLoading(true);
     async function getData() {
       try {
@@ -14,7 +20,6 @@ export function useFetch(url) {
         setFetchedData(data);
       } catch (error) {
         console.log("~ getData ~ error:", error);
-        setError(true);
       } finally {
         setLoading(false);
       }
@@ -22,5 +27,7 @@ export function useFetch(url) {
     getData();
   }, [url]);
 
-  return { fetchedData, isLoading, error };
+  return { fetchedData, isLoading };
 }
+
+export default useFetch;

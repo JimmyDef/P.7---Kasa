@@ -4,6 +4,10 @@ import "./card.scss";
 import { Link } from "react-router-dom";
 
 function card({ title, cover, id }) {
+  //--------------------------
+  // Utilisation des props pour générer les cards depuis: <Home/> => Fetch => Card => link
+  //--------------------------
+
   return (
     <Link to={`/accomodation/${id}`}>
       <div className="card">

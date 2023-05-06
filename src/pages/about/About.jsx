@@ -12,9 +12,8 @@ function About() {
           <Collapse
             title={data.title}
             text={data.text}
-            collapseState={data.collapseState}
+            collapseState={false}
             key={`${data.title}-${idx}`}
-            extraClass={""}
           />
         ))}
       </section>

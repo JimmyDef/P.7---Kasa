@@ -26,27 +26,41 @@ header {
     }
   }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 600px) {
   .uppercase {
     text-transform: uppercase;
   }
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: $tablet-min-width) {
+  header {
+    img {
+      width: 210px;
+    }
+    nav {
+      ul {
+        li {
+          margin-left: 30px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  header img {
+    width: 210px;
+  }
+}
+
+@media screen and (min-width: $desktop-min-width) {
   header {
     nav {
       ul {
         li {
           margin-left: 50px;
+          font-size: 24px;
         }
       }
     }
-  }
-  .link-size {
-    font-size: 24px;
-  }
-
-  header img {
-    width: 210px;
   }
 }

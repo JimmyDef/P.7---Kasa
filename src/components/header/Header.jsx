@@ -5,21 +5,18 @@ import "./header.scss";
 function Header() {
   return (
     <header>
-      <Link className="" to="/">
+      <Link to="/">
         <img src={logoKasa} alt="logo  Kasa" />
       </Link>
 
       <nav>
         <ul className="uppercase ">
           <li>
-            <NavLink className="link-size" to="/">
-              Accueil
-            </NavLink>
+            {/* Navlink pour la class default 'active" */}
+            <NavLink to="/">Accueil</NavLink>
           </li>
           <li>
-            <NavLink className="link-size" to="/about">
-              A Propos
-            </NavLink>
+            <NavLink to="/about">A Propos</NavLink>
           </li>
         </ul>
       </nav>

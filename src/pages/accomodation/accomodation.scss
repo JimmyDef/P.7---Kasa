@@ -2,6 +2,7 @@
 
 .accomodation-info {
   h2 {
+    margin-top: 10px;
     margin-bottom: 6px;
     font-size: 18px;
     font-weight: 500;
@@ -9,6 +10,7 @@
   p {
     margin-bottom: 10px;
     font-size: 14px;
+    font-weight: 500;
   }
   &__tags-box {
     margin-bottom: 20px;
@@ -24,12 +26,10 @@
     text-align: center;
     background-color: $color-primary;
     color: white;
-    font-size: 18px;
-
-    border-radius: 5px;
+    border-radius: 15px;
     p {
       font-size: 11px;
-      font-weight: 400;
+      font-weight: 500;
     }
   }
 }
@@ -75,6 +75,7 @@
 
 @media screen and (min-width: $tablet-min-width) {
   .accomodation-detail-wrapper {
+    margin-bottom: 26px;
     display: flex;
     justify-content: space-between;
     .accomodation-info {
@@ -85,16 +86,19 @@
         font-size: 16px;
       }
       &__tag {
-        padding: 2px 7px 0;
+        padding: 4px 7px 0;
         height: 22px;
         min-width: 95px;
-        font-size: 16px;
+        p {
+          font-size: 12px;
+        }
       }
     }
 
     .accomodation-profil {
       flex-direction: column-reverse;
       align-items: flex-end;
+      height: 120px;
 
       margin-left: 60px;
       &__stars {
@@ -119,13 +123,11 @@
   }
   .accomodation-collapse-wrapper {
     display: flex;
-    gap: 5%;
+    gap: 6%;
   }
 }
 @media screen and (min-width: $desktop-min-width) {
   .accomodation-detail-wrapper {
-    display: flex;
-    justify-content: space-between;
     .accomodation-info {
       h2 {
         font-size: 34px;
@@ -134,22 +136,26 @@
         margin-bottom: 20px;
         font-size: 18px;
       }
-      &__tags-box {
-        margin-bottom: 25px;
-      }
+
       &__tag {
-        padding: 3px 10px 0;
+        padding: 5px 10px 0;
         height: 25px;
         min-width: 115px;
-        font-size: 18px;
+
+        p {
+          font-size: 14px;
+        }
       }
     }
 
     .accomodation-profil {
       align-items: flex-end;
+      min-width: 201px;
+      height: 130px;
       &__stars {
         img {
-          width: 20px;
+          width: 25px;
+          margin: 8px 0 0 14px;
         }
       }
 

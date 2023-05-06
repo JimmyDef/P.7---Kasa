@@ -6,6 +6,9 @@ import PropTypes from "prop-types";
 function Collapse({ title, text, collapseState, extraClass }) {
   const [isOpen, setIsOpen] = useState(collapseState);
 
+  //--------------------------
+  // Fonction en cas de tableau récupéré dans le state "text" (et non une string)
+  //--------------------------
   const description = () => {
     if (Array.isArray(text)) {
       const equipments = text.map((elt, idx) => (
@@ -16,7 +19,9 @@ function Collapse({ title, text, collapseState, extraClass }) {
     }
     return <p>{text}</p>;
   };
-
+  //--------------------------
+  // Fonction pour inverser le déploiement des collapses (true/false)
+  //--------------------------
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
@@ -47,6 +52,10 @@ Collapse.propTypes = {
   title: PropTypes.string,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   collapseState: PropTypes.bool,
+  extraClass: PropTypes.string,
+};
+Collapse.defaultProps = {
+  extraClass: "",
 };
 
 export default Collapse;
